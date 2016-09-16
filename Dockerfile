@@ -5,3 +5,9 @@ RUN DEBIAN_FRONTEND="noninteractive" apt-get -q -y -o Dpkg::Options::="--force-c
 
 RUN apt-get -q install -y git
 
+# Add SSH configuration
+RUN mkdir /home/jenkins/.ssh
+RUN chmod 0700 /home/jenkins/.ssh
+ADD known_hosts /home/jenkins/.ssh/
+RUN chown -R jenkins /home/jenkins/.ssh
+
