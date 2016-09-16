@@ -7,7 +7,6 @@ RUN apt-get -q install -y git unzip
 
 # Add SSH configuration
 RUN mkdir /home/jenkins/.ssh
-RUN chmod 0700 /home/jenkins/.ssh
 ADD known_hosts /home/jenkins/.ssh/
 RUN chown -R jenkins /home/jenkins/.ssh
 
